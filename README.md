@@ -158,7 +158,7 @@ This project is fully optimized for continuous zero-config deployment on **Verce
 
 ### Method 1: Deploy via Vercel Dashboard (Recommended)
 
-1. Sign in to your [Vercel Account](https://vercel.com).
+1. Sign in to your sujakarthick-portfolio.vercel.app
 2. Click **Add New...** > **Project**.
 3. Select **Continue with GitHub** and import `sujakarthick/sujakarthick.portfolio`.
 4. Configure Project Settings:
@@ -181,7 +181,7 @@ Follow the interactive prompts to link and deploy the repository.
 
 ## 10. Live Portfolio Link
 
-- **Production URL**: `[Pending Vercel Deployment — Click Vercel to Deploy]`
+- **Production URL**: 'sujakarthick-portfolio.vercel.app'
 - **Alternative Mirror**: [suja.github.io](https://suja.github.io) *(Optional)*
 
 *(This link will be updated with the live Vercel domain once the deployment step completes).*
