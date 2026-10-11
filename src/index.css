@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #06b6d4;
+  --primary-glow: rgba(6, 182, 212, 0.4);
+  --electric: #38bdf8;
+  --violet: #818cf8;
+  --bg: #030712;
+  --surface: #0a0f1d;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(10, 15, 29, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15);
+}
+
+/* 3D Hero Name Shifting Gradient */
+.hero-gradient-text {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #a5b4fc 25%,
+    #38bdf8 50%,
+    #818cf8 75%,
+    #22d3ee 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 3D Letter Reveal Animation */
+.letter-3d-reveal {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(28px) rotateX(45deg) scale(0.92);
+  filter: blur(10px);
+  animation: letterPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes letterPop {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) rotateX(45deg) scale(0.92);
+    filter: blur(10px);
+  }
+  60% {
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Cinematic Light Sweep across Portrait */
+.light-sweep-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.light-sweep-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.03) 35%,
+    rgba(56, 189, 248, 0.28) 50%,
+    rgba(255, 255, 255, 0.4) 52%,
+    rgba(56, 189, 248, 0.28) 54%,
+    rgba(255, 255, 255, 0.03) 65%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: cinematicLightSweep 6s ease-in-out infinite;
+}
+
+@keyframes cinematicLightSweep {
+  0%, 15% {
+    left: -150%;
+  }
+  50%, 100% {
+    left: 150%;
+  }
+}
+
+/* Typewriter Caret */
+.typewriter-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  background-color: #22d3ee;
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blinkCaret 1s step-end infinite;
+}
+
+@keyframes blinkCaret {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Background Floating Typography */
+.bg-drift-word {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.025);
+  text-transform: uppercase;
+  will-change: transform, opacity;
+  transition: opacity 1s ease;
+}
+
+.bg-drift-word.glowing {
+  color: rgba(56, 189, 248, 0.06);
+  text-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+}
+
+/* Skill Orbit Styles */
+.orbit-track {
+  border: 1px dashed rgba(56, 189, 248, 0.15);
+  border-radius: 9999px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Glowing Pulsing Core */
+.orbit-core-glow {
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.35) 0%, rgba(99, 102, 241, 0.2) 50%, transparent 75%);
+  animation: corePulse 4s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.95;
+  }
+}
+
+/* Section scroll-triggered word reveal */
+.reveal-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(4px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-word.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Keyword glowing pulse on enter */
+.glow-keyword {
+  transition: text-shadow 0.5s ease, color 0.5s ease;
+}
+.glow-keyword.active-glow {
+  color: #38bdf8;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.6);
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .letter-3d-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .bg-drift-word {
+    animation: none !important;
+    transform: none !important;
+  }
+  .light-sweep-container::after {
+    display: none !important;
+  }
+}
