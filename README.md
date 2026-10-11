@@ -168,7 +168,7 @@ This project is fully optimized for continuous zero-config deployment on **Verce
    - **Output Directory**: `dist`
    - **Install Command**: `npm install`
 5. Click **Deploy**.
-6. Vercel will build and assign a production URL (e.g., `https://sujakarthick-portfolio.vercel.app`).
+6. Vercel will build and assign a production URL https://sujakarthick-portfolio.vercel.app
 
 ### Method 2: Deploy via Vercel CLI
 
